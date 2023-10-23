@@ -111,7 +111,7 @@ def export_txt(sorted_nodes, outfile, tree_depth, model_out=None):
     max_length = max([node.bi_code for node in sorted_nodes]).bit_length()
     with open(outfile, 'w+') as f:
         for node in sorted_nodes:
-            # set 0 threshold temp
+            # set 0 threshold temp to dummy node
             if node.threshold is not None and int(node.threshold)<1:
                 node.feature_num = -1
 
